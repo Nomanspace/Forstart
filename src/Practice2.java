@@ -7,9 +7,9 @@ public class Practice2 {
         Scanner scanner = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("введите вашу творожную массу");
-        double m =  Double.parseDouble(br.readLine());
+        double m = 0;
         System.out.println("введите ваш рост");
-        double h =  Double.parseDouble(br.readLine());
+        double h = 0;
         double imt;
         char exit;
         System.out.println("ваш рост" + h + "ваш вес" + m);
