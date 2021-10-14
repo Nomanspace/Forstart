@@ -8,25 +8,35 @@ public class Practice3 {
         Scanner scanner = new Scanner(System.in);
 
         String win = "you win";
-        String loose = "you loose";
+
 
         //Создаем переменную типа int
         int randInt;
 
+        //Создаем переменную под количество попыток
+        System.out.println("За сколько попыток угадаешь?");
+        int diffselect = scanner.nextInt();
+
         //Сохраняем случайное число в переменной randInt;
         randInt = rand.nextInt(10) + 1;
-        System.out.println("кожанный мешок, я загадал " + randInt);
+        System.out.println("кожаный мешок, я загадал " + randInt);
 
         //создаем пользовательскую переменную
         System.out.println("введите своё число");
         int userenter = scanner.nextInt();
 
         //userenter == randInt ? System.out.println(win) : System.out.println(loose);
-
-        if (userenter == randInt) {
-            System.out.println(win);
-        } else {
-            System.out.println(loose);
+        for (int i = 0; i < diffselect; i++) {
+            if (userenter == randInt) {
+                System.out.println(win);
+                break;
+            } else if (userenter > randInt) {
+                System.out.println("Мое число меньше, кожаный мешок");
+            } else if (userenter < randInt) {
+                System.out.println("Мое число меньше,кожаный мешок");
+            } else {
+                System.out.println("Попробуй еще!");
+            }
         }
     }
 }
