@@ -24,9 +24,9 @@ public class Practice3 {
         //создаем пользовательскую переменную
         System.out.println("введите своё число");
         int userenter = scanner.nextInt();
-
+        int i = 0;
         //userenter == randInt ? System.out.println(win) : System.out.println(loose);
-        for (int i = 0; i < diffselect; i++) {
+        while( i < diffselect) {
             if (userenter == randInt) {
                 System.out.println(win);
                 break;
@@ -34,8 +34,10 @@ public class Practice3 {
                 System.out.println("Мое число меньше, кожаный мешок");
             } else if (userenter < randInt) {
                 System.out.println("Мое число меньше,кожаный мешок");
+                continue;
             } else {
                 System.out.println("Попробуй еще!");
+                i++;
             }
         }
     }
