@@ -23,19 +23,19 @@ public class Practice3 {
 
         //создаем пользовательскую переменную
         System.out.println("введите своё число");
-        int userenter = scanner.nextInt();
         int i = 0;
         //userenter == randInt ? System.out.println(win) : System.out.println(loose);
-        while( i < diffselect) {
+        while (i <= diffselect) {
+            int userenter = scanner.nextInt();
             if (userenter == randInt) {
                 System.out.println(win);
                 break;
             } else if (userenter > randInt) {
                 System.out.println("Мое число меньше, кожаный мешок");
-            } else if (userenter < randInt) {
+            } /*else if (userenter < randInt) {
                 System.out.println("Мое число меньше,кожаный мешок");
                 continue;
-            } else {
+            } */ else {
                 System.out.println("Попробуй еще!");
                 i++;
             }
