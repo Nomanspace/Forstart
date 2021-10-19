@@ -21,51 +21,53 @@ public class Practice5 {
 
     static void Clash(Human Uter, Undead Artes) {
         Random rand = new Random();
+        Uter.hhealthpoints = 100;
+        Artes.uhealthpoints = 100;
         //int result = variable > 10 ? variable - 10 : variable + 10)
         while (Uter.hhealthpoints > 0 && Artes.uhealthpoints > 0) {
 
-            //Artes.undeadlivestatus ; // = Artes.uhealthpoints > 0;
-           // Uter.humanlivethstatus ; // = Uter.hhealthpoints > 0;
+            Artes.undeadlivestatus = Artes.uhealthpoints > 0;
+            Uter.humanlivethstatus = Uter.hhealthpoints > 0;
 
             //int round = 1;
             //round++;
 
-            //boolean checklivestatus;
-            //checklivestatus = Uter.humanlivethstatus && Artes.undeadlivestatus;
+            boolean checklivestatus;
+            checklivestatus = Uter.humanlivethstatus && Artes.undeadlivestatus;
 
-            //for (int round = 1; checklivestatus != false; round++) {
-            // System.out.println("Round " + round + " Fight!");
-            //}
+            for (int round = 1; checklivestatus != false; round++) {
+                System.out.println("Round " + round + " Fight!");
+                //}
 
 
-            Artes.uinitiative = rand.nextInt(6);
-            System.out.println("Инициатива Артеса " + Artes.uinitiative);
-            Uter.hinitiative = rand.nextInt(6);
-            System.out.println("Инициатива Утера " + Uter.hinitiative);
-            if (Uter.hinitiative > Artes.uinitiative) {
-                Artes.uhealthpoints -= Uter.hitpower;
-                System.out.println("Утер наносит удар " + Uter.hitpower + " Осталось жизней " + Artes.uhealthpoints);
+                Artes.uinitiative = rand.nextInt(6);
+                System.out.println("Инициатива Артеса " + Artes.uinitiative);
+                Uter.hinitiative = rand.nextInt(6);
+                System.out.println("Инициатива Утера " + Uter.hinitiative);
+                if (Uter.hinitiative > Artes.uinitiative) {
+                    Artes.uhealthpoints -= Uter.hitpower;
+                    System.out.println("Утер наносит удар " + Uter.hitpower + " Осталось жизней " + Artes.uhealthpoints);
 
-            } else if (Artes.uinitiative > Uter.hinitiative) {
-                Uter.hhealthpoints -= Artes.hitpower;
-                System.out.println("Артес наносит удар " + Artes.hitpower + " Осталось жизней " + Uter.hhealthpoints);
+                } else if (Artes.uinitiative > Uter.hinitiative) {
+                    Uter.hhealthpoints -= Artes.hitpower;
+                    System.out.println("Артес наносит удар " + Artes.hitpower + " Осталось жизней " + Uter.hhealthpoints);
 
-            }
-            if (Uter.hhealthpoints < 0) {
-                System.out.println("Утер проиграл, Артес победил!");
-                Uter.humanlivethstatus = false;
-                break;
-            } else if (Artes.uhealthpoints < 0) {
-                System.out.println("Артес проиграл, Утер победил!");
-                Artes.undeadlivestatus = false;
-                break;
-            }
-            if (Uter.hinitiative == Artes.uinitiative) {
-                System.out.println("Парирование");
-            } else {
-                System.out.println("Битва не состоялась");
+                }
+                if (Uter.hhealthpoints < 0) {
+                    System.out.println("Утер проиграл, Артес победил!");
+                    Uter.humanlivethstatus = false;
+                    break;
+                } else if (Artes.uhealthpoints < 0) {
+                    System.out.println("Артес проиграл, Утер победил!");
+                    Artes.undeadlivestatus = false;
+                    break;
+                }
+                if (Uter.hinitiative == Artes.uinitiative) {
+                    System.out.println("Парирование");
+                } else {
+                    System.out.println("Битва не состоялась");
 
-            }
+                }
 
            /* if (Uter.hhealthpoints < 0) {
                 System.out.println("Утер проиграл, Артес победил!");
@@ -76,6 +78,7 @@ public class Practice5 {
             } else {
                 System.out.println("Бой продолжается");
             } */
+            }
         }
 
     }
@@ -92,7 +95,7 @@ class Hitmath {
 
 class Human {
     //Random rand = new Random();
-    int hhealthpoints = 100;
+    int hhealthpoints;
     int hitpower = Hitmath.getIntFromRange(0, 10);
     boolean humanlivethstatus;
     int hinitiative = 0;// rand.nextInt(6);
@@ -100,7 +103,7 @@ class Human {
 
 class Undead {
     //Random rand = new Random();
-    int uhealthpoints = 100;
+    int uhealthpoints;
     int hitpower = Hitmath.getIntFromRange(1, 9);
     boolean undeadlivestatus;
     int uinitiative = 0; // rand.nextInt(6);
