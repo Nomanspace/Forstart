@@ -16,7 +16,7 @@ public class Practice7 {
         char triangle = scanner.next().charAt(0);
         //char b = 'b';
         if (triangle == 'a') {
-            perimetrTriangle();
+            // perimetrTriangle();
         } else {
             System.out.println("что-то пошло не так");
         }
