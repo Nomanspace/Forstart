@@ -9,18 +9,22 @@ public class ArrayAndString {
     public static void main(String[] args) {
         //String a = "Sometimes";
         //System.out.println(a.charAt(2));
-        String a1 = "Иван Иванов";
-        String a2 = "иван иванов";
-        //System.out.println(a1.equals(a2));
-        //System.out.println(a1.equalsIgnoreCase(a2));
+        String user1 = "Иван Иванов";
+        String user2 = "иван иванов";
+        //System.out.println(a1.equals(user2));
+        //System.out.println(a1.equalsIgnoreCase(user2));
+        checkUserName(user1, user2);
+    }
 
-        if (a1.equalsIgnoreCase(a2)) {
+    private static void checkUserName(String user1, String user2) {
+
+        if (user1.equalsIgnoreCase(user2)) {
             System.out.println("Выберите другое имя");
-        } else if (!a1.equalsIgnoreCase(a2)) {
+        } else if (!user1.equalsIgnoreCase(user2)) {
             System.out.println("Отличное Имя");
         } else {
             System.out.println("somethings get wrong");
         }
-
     }
+
 }
