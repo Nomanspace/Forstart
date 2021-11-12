@@ -1,3 +1,5 @@
+package AAS2;
+
 public class ArrayAndString2 {
 
     public static void main(String[] args) {

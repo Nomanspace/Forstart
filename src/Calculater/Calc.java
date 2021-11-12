@@ -1,4 +1,4 @@
-/*  addition; сложение
+package Calculater;/*  addition; сложение
 subtraction; вычитание
 Multiplication; умножение
 Division; деление */

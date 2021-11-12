@@ -1,3 +1,5 @@
+package Pr2;
+
 import java.io.BufferedReader;
 import java.util.Scanner;
 import java.io.InputStreamReader;

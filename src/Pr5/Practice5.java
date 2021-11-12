@@ -1,3 +1,5 @@
+package Pr5;
+
 import java.util.Random;
 
 /**
