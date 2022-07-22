@@ -17,7 +17,7 @@ public class ToTable {
         this.y = y;
     }
 
-    int[][] resize(int @NotNull [] mass, int x, int y) {
+    int[][] resize(int [] mass, int x, int y) {
         int[][] toTableArray = new int[x][y];
         for (int i = 0; i < mass.length; ) {//1
             for (int j = 0; j < toTableArray.length; j++) {//0
