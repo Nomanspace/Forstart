@@ -15,7 +15,8 @@ public class Parallelogram extends Quadrangle implements Figure {
     //S=a*h
     @Override
     public double area() {
-        return max(a, b) * getHeight(); //(a * b) * sin(toRadians(alpha));
+        double resultMax = max(a, b);
+        return resultMax * getHeight(); //max(a, b) * getHeight(); //(a * b) * sin(toRadians(alpha));
     }
 
     //P = 2a + 2b = 2(a + b)
@@ -35,7 +36,8 @@ public class Parallelogram extends Quadrangle implements Figure {
     //find the smallest height of a Parallel.
     @Override
     public double getHeight() { // a * min(
-        return a * min(a * sin(toRadians(alpha)), b * sin(toRadians(beta)));
+        double resultMin = min(a * sin(toRadians(alpha)), b * sin(toRadians(beta)));
+        return  resultMin;//a * min(a * sin(toRadians(alpha)), b * sin(toRadians(beta)));
     }
 
     @Override
@@ -45,8 +47,14 @@ public class Parallelogram extends Quadrangle implements Figure {
 }
 
 class ForTestPara {
+
     public static void main(String[] args) {
         boolean check;
+        boolean check1;
+        boolean check2;
+        boolean check3;
+        boolean check4;
+
         Parallelogram parallelogram = new Parallelogram(1, 2, 60, 120, "Pink");
         Parallelogram parallelogram1 = new Parallelogram(2, 1, 60, 120, "Pink");
         Parallelogram parallelogram2 = new Parallelogram(1, 2, 90, 90, "White");
@@ -59,9 +67,9 @@ class ForTestPara {
                 parallelogram.perimeter() == 6 &&
 
                 parallelogram1.getColor().equals("Pink") &&
-                parallelogram1.getHeight() >= 0.86 && parallelogram1.getHeight() <= 0.87 &&
+                //parallelogram1.getHeight() >= 0.86 && parallelogram1.getHeight() <= 0.87 &&
                 parallelogram1.getLargeDiagonal() >= 2.64 && parallelogram1.getLargeDiagonal() <= 2.65 &&
-                parallelogram1.area() >= 1.73 && parallelogram1.area() <= 1.74 &&
+                //parallelogram1.area() >= 1.73 && parallelogram1.area() <= 1.74 &&
                 parallelogram1.perimeter() == 6 &&
 
                 parallelogram2.getColor().equals("White") &&
@@ -71,10 +79,25 @@ class ForTestPara {
                 parallelogram2.perimeter() == 6 &&
 
                 parallelogram3.getColor().equals("Pink") &&
-                parallelogram3.getHeight() >= 1.73 && parallelogram3.getHeight() <= 1.74 &&
+                //parallelogram3.getHeight() >= 1.73 && parallelogram3.getHeight() <= 1.74 &&
                 parallelogram3.getLargeDiagonal() >= 4.35 && parallelogram3.getLargeDiagonal() <= 4.36 &&
-               // parallelogram3.area() >= 5.19 && parallelogram3.area() <= 5.20 &&
-                parallelogram3.perimeter() == 10;
+                //parallelogram3.area() >= 5.19 && parallelogram3.area() <= 5.20 &&
+                parallelogram3.perimeter() == 10
+        ;
+        System.out.println("parallelogram1.getHeight() " + parallelogram1.getHeight());
+        check1 = parallelogram1.getHeight() >= 0.86 && parallelogram1.getHeight() <= 0.87;
+        System.out.println("parallelogram1.area() " + parallelogram1.area());
+        check2 = parallelogram1.area() >= 1.73 && parallelogram1.area() <= 1.74;
+        System.out.println("parallelogram3.getHeight() " + parallelogram3.getHeight());
+        check3 = parallelogram3.getHeight() >= 1.73 && parallelogram3.getHeight() <= 1.74;
+        System.out.println("parallelogram3.area() " + parallelogram3.area());
+        check4 = parallelogram3.area() >= 5.19 && parallelogram3.area() <= 5.20;
+
         System.out.println(check);
+        System.out.println(check1);
+        System.out.println(check2);
+        System.out.println(check3);
+        System.out.println(check4);
     }
+
 }
