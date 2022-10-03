@@ -2,7 +2,7 @@ package Practice.Week.Second.TaskChess;
 import java.util.Scanner;
 
 public class Main {
-
+    //psuh
     public static ChessBoard buildBoard() {
         ChessBoard board = new ChessBoard("White");
 
